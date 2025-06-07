@@ -15,9 +15,11 @@
             <div class="main">
                 <h1>Student Registration Form</h1>
                 <div class="inp-tags">
-                    <input type="text" name="name" id="" placeholder="Enter Your Name">
-                    <input type="email" name="email" id="" placeholder="Enter Email">
-                    <input type="tel" name="contact" id="" placeholder="Enter Contact">
+                    <input type="text" name="name" id="" placeholder="Enter Your Name"
+                        onkeyup="nameValidation(this.value)"> <br> <span id="s"></span> <br>
+
+                    <input type="email" name="email" id="" placeholder="Enter Email" onkeyup="validateEmail(this.value)"> <br>  <span id='ss'></span> <br>
+                    <input type="tel" name="contact" id="" placeholder="Enter Contact"> <br>
                 </div>
 
                 <div class="select-opt">
@@ -28,11 +30,11 @@
                         <option value="B.C.A">B.C.A</option>
                         <option value="B.S.C">B.S.C</option>
                     </select>
+                    <br>
 
+                    <input type="date" name="dte" id="dte"> <br>
 
-                    <input type="date" name="dte" id="dte">
-
-                    <label for="" class="sel-Qual" id="">Select University </label>
+                    <label for="" class="sel-Qual" id=""> University / School </label>
                     <select name="university" id="un">
                         <option value=""> </option>
                         <option value="NMU">NMU</option>
@@ -49,6 +51,54 @@
         </div>
 
     </form>
+
+    <script>
+        function nameValidation(str) {
+            str = str.toLowerCase();
+            let flag = true;
+            let span = document.getElementById("s");
+            for (var i = 0; i < str.length; i++) {
+                if (!((str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) || str.charCodeAt(i) == 32)) {
+                    flag = false; //when we found any char other than alphabet 
+
+                }
+            }
+            if (flag) {
+                span.innerHTML = "Valid Name";
+                span.style.color = "green";
+                span.style.padding = "20px";
+            }
+            else {
+                span.innerHTML = "Invalid name";
+                span.style.color = "red";
+            }
+        }
+
+        function validateEmail(str) {
+            let index = str.indexOf("@");
+            let index1 = str.lastIndexOf("@");
+            let span = document.getElementById("ss");
+            if (index <= 0 || index != index1) {
+                span.innerHTML = "Invalid email";
+                span.style.color = "red";
+            }
+            else {
+                let as = str.substring((index + 1));
+                index = as.indexOf(".");
+                index1 = as.lastIndexOf(".");
+                if ((index == -1 || index != index1) || (index != (as.length - 4) && index != (as.length - 3))) {
+                    span.innerHTML = "Invalid email";
+                    span.style.color = "red";
+                }
+                else {
+                    span.innerHTML = "valid email ";
+                    span.style.color = "green";
+                }
+            }
+
+        }
+
+    </script>
 </body>
 
 </html>
