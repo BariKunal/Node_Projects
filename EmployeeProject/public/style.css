@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background-color: black;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    height: 500px;
+    width: 600px;
+    border: 1px solid white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #ff5e01, #f4ec00, #ff5e01)
+}
+
+.main h1 {
+    /* margin-top: -10px; */
+    line-height: 100px;
+    color: black;
+}
+
+.wrapper input {
+    height: 40px;
+    width: 150px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.select-opt {
+    width: 100%;
+    text-align: center;
+    /* margin-left: -18px; */
+}
+
+.select-opt select {
+    width: 20px;
+}
+
+.qly {
+    width: 150px;
+    padding: 8px;
+    color: black;
+    margin-left: -5px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#qly-id {
+    margin-left: 10px;
+}
+
+.sub input {
+    width: 300px;
+    height: 40px;
+    background-image: linear-gradient(to left, rgb(70, 75, 218), rgb(255, 255, 255));
+}

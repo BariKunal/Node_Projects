@@ -1,0 +1,76 @@
+D:\Node_Projects>EmployeeProject
+'EmployeeProject' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Node_Projects>cd EmployeeProject
+
+D:\Node_Projects\EmployeeProject>npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (employeeproject)
+version: (1.0.0)
+description: Student Registration Form Using Node Js, Express js, Database SQl and Validations.
+entry point: (index.js)
+test command:
+git repository: https://github.com/BariKunal/Node_Projects.git
+keywords: Node Js, Express Js, SQL2 Database, Validations for fields
+author: Kunal Bari
+license: (ISC)
+About to write to D:\Node_Projects\EmployeeProject\package.json:
+
+{
+  "name": "employeeproject",
+  "version": "1.0.0",
+  "description": "Student Registration Form Using Node Js, Express js, Database SQl and Validations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BariKunal/Node_Projects.git"
+  },
+  "keywords": [
+    "Node",
+    "Js",
+    "Express",
+    "Js",
+    "SQL2",
+    "Database",
+    "Validations",
+    "for",
+    "fields"
+  ],
+  "author": "Kunal Bari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BariKunal/Node_Projects/issues"
+  },
+  "homepage": "https://github.com/BariKunal/Node_Projects#readme"
+}
+
+
+Is this OK? (yes) yes
+
+D:\Node_Projects\EmployeeProject>npm install
+
+up to date, audited 1 package in 886ms
+
+found 0 vulnerabilities
+
+D:\Node_Projects\EmployeeProject> npm install express mysql2 body-parser
+
+added 77 packages, and audited 78 packages in 7s
+
+15 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
