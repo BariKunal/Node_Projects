@@ -18,7 +18,8 @@
                     <input type="text" name="name" id="" placeholder="Enter Your Name"
                         onkeyup="nameValidation(this.value)"> <br> <span id="s"></span> <br>
 
-                    <input type="email" name="email" id="" placeholder="Enter Email" onkeyup="validateEmail(this.value)"> <br>  <span id='ss'></span> <br>
+                    <input type="email" name="email" id="" placeholder="Enter Email"
+                        onkeyup="validateEmail(this.value)"> <br> <span id='ss'></span> <br>
                     <input type="tel" name="contact" id="" placeholder="Enter Contact"> <br>
                 </div>
 
@@ -32,7 +33,8 @@
                     </select>
                     <br>
 
-                    <input type="date" name="dte" id="dte"> <br>
+                    <input type="date" name="dte" id="dte" onkeydown="dateValidation(this.value)"> <br> <span
+                        id="date-dte"></span>
 
                     <label for="" class="sel-Qual" id=""> University / School </label>
                     <select name="university" id="un">
@@ -60,7 +62,6 @@
             for (var i = 0; i < str.length; i++) {
                 if (!((str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) || str.charCodeAt(i) == 32)) {
                     flag = false; //when we found any char other than alphabet 
-
                 }
             }
             if (flag) {
@@ -95,9 +96,33 @@
                     span.style.color = "green";
                 }
             }
-
         }
 
+        function dateValidation(number) {
+            let d = document.getElementById("date-dte")
+            let dob = new Date(number)
+            let todayDte = new Date()
+
+            let age = todayDte.getFullYear() - dob.getFullYear()
+            
+            if (age < 18) {
+                // d.innerHTML = "You must be at least 18 years old.";
+                d.style.color = "red";
+                alert("You must be at least 18 years old."+age)
+                return false
+
+            } else {
+                // d.innerHTML = "Valid Date of Birth.";
+                d.style.color = "green";
+                return true
+            }
+        }
+        document.querySelector("form").addEventListener("submit", function (e) {
+                let dateInput = document.getElementById("dte").value;
+                if (!dateValidation(dateInput)) {
+                    e.preventDefault(); 
+                }
+            });
     </script>
 </body>
 
