@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="/save" method="get"> 
+    <form action="/save" method="post">
         <div class="wrapper">
             <div class="main">
                 <h1>Student Registration Form</h1>
@@ -21,25 +21,25 @@
                 </div>
 
                 <div class="select-opt">
-                    <label for="" class="">Select Qualification  </label>
-                        <select name="cs" id="cs">
-                            <option value=""> </option>
-                            <option value="BE">B.E.</option>
-                            <option value="BCA">B.C.A</option>
-                            <option value="BSC">B.S.C</option>
-                        </select>
-                  
+                    <label for="" class="sel-Qual">Select Qualification </label>
+                    <select name="qualification" id="quali">
+                        <option value=""> </option>
+                        <option value="BE">B.E.</option>
+                        <option value="BCA">B.C.A</option>
+                        <option value="BSC">B.S.C</option>
+                    </select>
 
-                <input type="date" name="dte" id="dte">
 
-                    <label for="" class="" id="">Select University  </label>
-                        <select name="un" id="un">
-                            <option value=""> </option>
-                            <option value="MNU">NMU</option>
-                            <option value="SSPU">SSPU</option>
-                            <option value="BATU">BATU</option>
-                        </select>
-                  
+                    <input type="date" name="dte" id="dte">
+
+                    <label for="" class="sel-Qual" id="">Select University </label>
+                    <select name="university" id="un">
+                        <option value=""> </option>
+                        <option value="MNU">NMU</option>
+                        <option value="SSPU">SSPU</option>
+                        <option value="BATU">BATU</option>
+                    </select>
+
                 </div>
                 <div class="sub">
                     <input type="submit" value="Register">
