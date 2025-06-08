@@ -104,11 +104,11 @@
             let todayDte = new Date()
 
             let age = todayDte.getFullYear() - dob.getFullYear()
-            
+
             if (age < 18) {
                 // d.innerHTML = "You must be at least 18 years old.";
                 d.style.color = "red";
-                alert("You must be at least 18 years old."+age)
+                alert("You must be at least 18 years old." + age)
                 return false
 
             } else {
@@ -118,11 +118,11 @@
             }
         }
         document.querySelector("form").addEventListener("submit", function (e) {
-                let dateInput = document.getElementById("dte").value;
-                if (!dateValidation(dateInput)) {
-                    e.preventDefault(); 
-                }
-            });
+            let dateInput = document.getElementById("dte").value;
+            if (!dateValidation(dateInput)) {
+                e.preventDefault();
+            }
+        });
     </script>
 </body>
 
