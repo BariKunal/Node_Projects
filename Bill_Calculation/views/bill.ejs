@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill Calculation</title>
     <style>
-        .container{
+        .container {
             height: 100vh;
             width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-image: linear-gradient(to right, yellow, red, white, red, yellow);
         }
-        .frm{
+
+        .frm {
             height: 500px;
             width: 800px;
             border: 1px solid red;
-            background-image: linear-gradient(to right, rgb(143, 226, 143),#9797da);
+            background-image: linear-gradient(to right, rgb(143, 226, 143), #9797da);
             border-radius: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
+
         }
-        .inp{
+
+        .inp {
             height: 100px;
             width: 90%;
         }
-        .inp input{
+
+        .inp input {
             height: 50px;
             width: 300px;
             margin: 10px;
             font-size: 15px;
-            background-color:rgb(243, 243, 156);
+            background-color: rgb(243, 243, 156);
             border: none;
             border-radius: 10px;
         }
-        .sub{
+
+        .sub {
             text-align: center;
             height: 100px;
         }
-        .sub input{
+
+        .sub input {
             height: 50px;
             width: 500px;
             font-size: 20px;
-             /* background-color:rgb(243, 243, 156); */
+            /* background-color:rgb(236, 57, 57); */
             border: none;
             border-radius: 10px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <form action="/save" method="post" class="frm">
@@ -61,9 +69,11 @@
             <div class="sub">
                 <input type="submit" value="Calculate Bill">
             </div>
-             <h1>Bill Is : - <%=calBill%></h1>
+            <h1>Bill Is : - <%=calBill%>
+            </h1>
         </form>
     </div>
-   
+
 </body>
+
 </html>
