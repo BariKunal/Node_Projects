@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-       
+
 </head>
 
 <body>
@@ -17,20 +17,20 @@
 
             <h1>Home Loan EMI Calculator</h1>
             <div class="all_input">
-                <!-- <label >Loan Amount</label> -->  
-                <input type="range" name="amt" id="amt" min="100000"  value="0" oninput="demo(this.value)" max="5000000" value="2000000"> <br>
+                <!-- <label >Loan Amount</label> -->
+                <input type="range" name="amt" id="amt" min="100000" value="" max="5000000" value="2000000"> <br>
                 <input type="text" name="loanamt" id="loanamt" placeholder="Loan Amount">
             </div>
 
             <div class="all_input">
                 <!-- <label>Tenure (Years)</label> -->
-                <input type="range" name="yr" id="yr" min="1" max="30"  > <br>
+                <input type="range" name="yr" id="yr" min="1" max="30"> <br>
                 <input type="text" name="tenyr" id="tenyr" placeholder="Tenure (Years)">
             </div>
 
             <div class="all_input">
                 <!-- <label>Interest Rate</label> -->
-                <input type="range" name="int" id="int" min="0.5" max="15" value="6.7"> <br>
+                <input type="range" name="int" id="int" min="0.5" max="15" value=""> <br>
                 <input type="text" name="intrate" id="intrate" placeholder="Interest Rate">
             </div>
 
@@ -41,21 +41,46 @@
                 <h2>Monthly EMI: ₹<span id="emi">0</span></h2>
             </div>
 
-            <div class="info">
-                <h5>Monthly EMI : <%= loanamt %></h5>
-                <h5>Principle Amount : <%= tenyr %></h5>
-                <h5>Total Interest : <%= intrate %></h5>
+            <div class="result">
+                <h2>Monthly EMI: ₹<%= emi %>
+                </h2>
             </div>
+
+            <div class="info">
+                <h5>Monthly EMI : ₹<%= emi %>
+                </h5>
+                <h5>Principal Amount : ₹<%= loanamt %>
+                </h5>
+                <h5>Total Interest : ₹<%= totalInterest %>
+                </h5>
+            </div>
+
 
         </form>
     </div>
 
-<script>
-    function demo(str) {
-        console.log(str);
-        document.getElementById("loanamt").value = str;
-    }
-</script>
+    <script>
+        let range = document.getElementById("amt")
+        let text = document.getElementById("loanamt")
+        range.addEventListener("input", function () {
+            text.value = range.value
+        })
+
+        let range1 = document.getElementById("yr")
+        let text1 = document.getElementById("tenyr")
+        range1.addEventListener("input", function () {
+            text1.value = range1.value
+        })
+
+        let range2 = document.getElementById("int")
+        let text2 = document.getElementById("intrate")
+        range2.addEventListener("input", function () {
+            text2.value = range2.value
+        })
+
+
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
