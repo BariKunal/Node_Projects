@@ -6,7 +6,7 @@ app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get("/", (req, res) => {
-    res.render("salary.ejs", { name: null, email: null, contact: 0, basicSal: 0, da: 0, hra: 0, totalSal: 0 })
+    res.render("salary.ejs", { name: null, email: null, contact: null, basicSal: null, da: null, hra: null, totalSal: null })
 })
 
 app.post("/save", (req, res) => {
