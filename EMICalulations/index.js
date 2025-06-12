@@ -18,11 +18,11 @@ app.post("/save", (req, res) => {
     let months = tenyr * 12;                        // Total number of months
 
     // EMI formula
-    let emi = (loanamt * monthlyRate * Math.pow(1 + monthlyRate, months)) /
-              (Math.pow(1 + monthlyRate, months) - 1);
+    let emi =Math.floor((loanamt * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+              (Math.pow(1 + monthlyRate, months) - 1));
 
-    let totalPayment = emi * months;                // Total amount paid (Principal + Interest)
-    let totalInterest = totalPayment - loanamt;
+    let totalPayment =Math.floor(emi * months);                // Total amount paid (Principal + Interest)
+    let totalInterest = Math.floor(totalPayment - loanamt);
 
     res.render("emi.ejs", { loanamt: loanamt, tenyr: tenyr, intrate: intrate, emi: emi, totalInterest: totalInterest })
 })
