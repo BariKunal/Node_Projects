@@ -5,8 +5,16 @@ exports.saveDept=((req,res) =>{
     let promise = deptmodel.saveDept(name)
     promise.then((result) => {
         console.log(result);
-        res.send(result)
+        res.render("adddept.ejs",{msg:result})
     }).catch((err) => {
-        res.send(err)
+        res.render("adddept.ejs",{msg:err})
     })
 })
+
+exports.homePage = (req,res) => {
+    res.render("home.ejs")
+}
+
+exports.newDept = (req, res) => {
+    res.render("adddept.ejs",{msg:""})
+}
