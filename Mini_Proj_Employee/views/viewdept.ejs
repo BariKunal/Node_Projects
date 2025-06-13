@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include("home.ejs")%>
+
+        <div class="container">
+            <table class="table mt-5 text-center table-striped">
+                <tr>
+                    <th>Sr NO</th>
+                    <th>Dept name</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+                <% deptList.forEach((row,index)=> { %>
+                    <tr>
+                        <td>
+                            <%= index+1%>
+                        </td>
+                        <td>
+                            <%= row.deptname%>
+                        </td>
+                        <td><a href=""></a>Delete</td>
+                        <td><a href=""></a>Update</td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+</body>
+
+</html>
