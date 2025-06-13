@@ -18,3 +18,13 @@ exports.homePage = (req,res) => {
 exports.newDept = (req, res) => {
     res.render("adddept.ejs",{msg:""})
 }
+
+exports.getAllDept = (req,res) => {
+    let promise   = deptmodel.getAllDept()
+    promise.then((result) => {
+        res.render("viewdept.ejs",{deptList:result})
+    })
+    promise.catch((err) => {
+        res.send(err)
+    })
+}

@@ -14,3 +14,16 @@ exports.saveDept = (deptname) => {
         })
     })
 }
+
+exports.getAllDept = () => {
+    return new Promise((resolve,reject) => {
+        db.query("select * from dept ",(err,result) => {
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(result)
+            }
+        })
+    })
+}
