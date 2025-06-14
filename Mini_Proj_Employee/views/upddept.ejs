@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("home.ejs")%>
+    <form action="/updatedept" method="post">
+        <div class="container mt-5">
+            <div class="text-center">
+                <input class="p-2 rounded w-50 text-center align-content-center" type="hidden" name="id" id="id" value="<%= deptId%>">
+            </div>
+            <div class="text-center">
+                <input class="p-2 rounded w-50 text-center align-content-center" type="text" name="name" id="name" value="<%= deptName%>">
+            </div>
+            <div class="text-center">
+                <button class="btn btn-outline-primary mt-3 text-center w-50" type="submit">Update Department</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

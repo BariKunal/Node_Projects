@@ -40,3 +40,17 @@ exports.delDeptById = (did) => {
         })
     })
 }
+
+exports.deptFinalUpd = (did,name) =>{
+    return new Promise((resolve, reject) => {
+        db.query("update dept set deptname=? where deptid=?",[name,did],(err,result) => {
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve("Update Successfully...")
+            }
+        })
+
+    })
+}
