@@ -27,3 +27,16 @@ exports.getAllDept = () => {
         })
     })
 }
+
+exports.delDeptById = (did) => {
+    return new Promise ((resolve, reject) => {
+        db.query("delete from dept where deptid = ?",[did],(err,result) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve("Deleted Successfully...")
+            }
+        })
+    })
+}
