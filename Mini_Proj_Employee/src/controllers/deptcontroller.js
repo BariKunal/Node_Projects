@@ -44,5 +44,27 @@ exports.delDept = (req, res) => {
     promise.catch((err) => {
         res.send(err)
     })
+}
 
+exports.updDept = (req,res) =>{
+    res.render("upddept.ejs",{deptName:req.query.dn, 
+                              deptId:req.query.did})
+    // res.send("Upd")
+}
+
+exports.deptFinalUpd = (req,res) =>{
+    let {id,name} = req.body
+    let promise = deptmodel.deptFinalUpd(id,name)
+    promise.then((result) =>{
+        let pro = deptmodel.getAllDept()
+        pro.then((result) => {
+            res.render("viewdept.ejs", { deptList: result })
+        })
+        pro.catch((err) => {
+            res.send(err)
+        })
+    })
+    promise.catch((err) =>{
+        res.send("Not Updated")
+    })
 }

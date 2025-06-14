@@ -8,5 +8,6 @@ router.get("/",deptctrl.homePage)
 router.get("/newDept",deptctrl.newDept)
 router.get("/viewalldept",deptctrl.getAllDept)
 router.get("/deptdelet",deptctrl.delDept)
-
+router.get("/upddept",deptctrl.updDept)
+router.post("/updatedept",deptctrl.deptFinalUpd)
 module.exports = router
