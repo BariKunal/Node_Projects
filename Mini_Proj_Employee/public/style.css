@@ -1,11 +1,12 @@
 body{
-    height: 100vh;
+    /* height: 100vh;
     margin: 0;
     /* width: 100%;  */
     background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmcwMjZuc2VmbXVnaDN0NDE4cXNjazNvcDVjaXJ1dnNieHk1dmFwcyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ir5WUMZGD4S6foSUY0/giphy.gif");
-    background-repeat: no-repeat;
-    background-size: 100% 700px;    
+     background-repeat: no-repeat;
+     background-size: cover;
+    /*background-size: 100% 700px;    
     background-position: center;
-    /* background-size: 50%;     */
+    background-size: 50%;     */ 
 
 }   
