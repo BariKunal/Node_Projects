@@ -54,3 +54,16 @@ exports.deptFinalUpd = (did,name) =>{
 
     })
 }
+
+exports.getDeptByName = (deptname) =>{
+    return new Promise((resolve,reject) => {
+        db.query("select * from dept where deptname like '%"+deptname+"%'",(err,result) => {
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(result)
+            }
+        })
+    })
+}
