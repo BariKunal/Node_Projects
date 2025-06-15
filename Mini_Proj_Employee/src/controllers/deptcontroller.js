@@ -68,3 +68,14 @@ exports.deptFinalUpd = (req,res) =>{
         res.send("Not Updated")
     })
 }
+
+exports.searchDeptByUsingName=((req,res)=>{
+    let name = req.query.dn
+    let promise = deptmodel.getDeptByName(name)
+    promise.then((result) => {
+        res.json(result)
+    })
+    promise.catch((err) => {
+        res.send("Something went Wrong")
+    })
+})
