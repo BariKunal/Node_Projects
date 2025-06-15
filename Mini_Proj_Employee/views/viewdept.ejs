@@ -13,7 +13,11 @@
 <body>
     <%- include("home.ejs")%>
 
-        <div class="container">
+        <div class="container p-5 bg-light rounded-3 mt-5">
+            <div class="form-group text-center">
+                <input type="text" name="name" id="" class="w-75 p-2" placeholder="Search Department Name" onkeyup="searchDept(this.value)">
+            </div>
+            
             <table class="table mt-5 text-center table-striped">
                 <tr>
                     <th>Sr NO</th>
@@ -21,6 +25,7 @@
                     <th>Delete</th>
                     <th>Update</th>
                 </tr>
+                <tbody id="tblbody">
                 <% deptList.forEach((row,index)=> { %>
                     <tr>
                         <td>
@@ -34,6 +39,7 @@
                                     class="fa-solid fa-pencil fa-lg"></i></a></td>
                     </tr>
                     <% }) %>
+                    </tbody>
             </table>
         </div>
 </body>
