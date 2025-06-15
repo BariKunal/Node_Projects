@@ -1,0 +1,1 @@
+exports.newEmp = (req, res) => {}
