@@ -1,6 +1,7 @@
 let express = require("express")
 let deptctrl = require("../controllers/deptcontroller.js")
 let empCtrl = require("../controllers/empctrl.js")
+const upload = require("../middleware/fileupload.js")
 let router = express.Router()
 
 router.post("/adddept",deptctrl.saveDept)
@@ -14,6 +15,6 @@ router.post("/updatedept",deptctrl.deptFinalUpd)
 router.get("/searchDeptByName",deptctrl.searchDeptByUsingName)
 
 router.get("/newemployee",empCtrl.newEmp)
-
-
+router.post("/saveemp",upload.single("photo"),empCtrl.saveEmployee)
+router.get("/viewAllEmp",empCtrl.getAllEmployee)
 module.exports = router
