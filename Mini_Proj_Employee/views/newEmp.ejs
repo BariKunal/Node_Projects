@@ -19,7 +19,8 @@
 
                     <div class="col-md-6">
                         <label for="inputEmail4" class="form-label">Enter Email</label>
-                        <input type="email" name="email" class="form-control" id="inputEmail4">
+                        <input type="email" name="email" class="form-control" id="inputEmail4" onblur="checkEmailExistance(this.value)">
+                        <label class="text-white" id="labelMsg"></label>
                     </div>
 
                     <div class="col-12">
@@ -36,7 +37,7 @@
                         <input type="text" name="sal" class="form-control" id="inputCity">
                     </div>
                     <div class="col-md-6">
-                        <label for="inputState" class="form-label">State</label>
+                        <label for="inputState" class="form-label">Departments</label>
                         <select name="deptid" id="inputState" class="form-select">
                             <option>Choose Dept</option>
                             <% deptList.forEach((depData,index)=> { %>
