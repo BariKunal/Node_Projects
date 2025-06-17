@@ -34,3 +34,58 @@ exports.getAllEmployee = ((req,res) => {
             res.send(err)
         })
 })
+
+exports.DeleteEmp = ((req,res) => {
+    let eid = parseInt(req.query.eid)
+    // console.log("ID = "+parseInt(req.query.eid));
+    // console.log("EID =", req.query.eid, "Parsed EID =", eid);
+    let promise = empCrud.deleteEmpById(eid)
+    promise.then((result) =>{
+        let pro = empCrud.getAllEmps()
+            pro.then((result) => {
+                res.render("viewEmp.ejs", { deptList: result })
+            })
+            pro.catch((err) => {                   
+                res.send(err)
+            })
+    })
+    promise.catch((err) => {
+        res.send("Errorrrrr..."+err)
+    })
+})
+
+exports.verifyEmail = (req,res) => {
+    let userEmail = req.query.e
+    let promise = empCrud.verifyEmail(userEmail)
+    promise.then((result) => {
+        if(result.length > 0){
+            res.send("Email Already Exist..")
+        }
+        else{
+            res.send("")
+        }
+    })
+}
+
+exports.updEmployee = (req,res) =>{
+    res.render("updateEmp.ejs",{Name:req.query.dn, 
+                              deptId:req.query.eid})
+    
+}
+
+exports.empFinalUpd = (req,res) =>{
+    let {eid,name} = req.body
+    let promise = empCrud.empFinalUpd(eid,name)
+    promise.then((result) =>{
+        let pro = empCrud.getAllEmps()
+        pro.then((result) => {
+            res.render("viewEmp.ejs", { deptList: result })
+        })
+        pro.catch((err) => {
+            res.send(err)
+        })
+    })
+    promise.catch((err) =>{
+        res.send("Not Updated")
+    })
+}
