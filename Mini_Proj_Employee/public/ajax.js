@@ -32,3 +32,20 @@ let searchDept=(str) =>{
     xhttp.open("get","/searchDeptByName?dn="+str,true)
     xhttp.send();
 }
+
+let checkEmailExistance = (str) => {
+    let xhttp = new XMLHttpRequest()
+    xhttp.onreadystatechange = function() {
+        if(this.readyState==4 && this.status==200){
+            if(this.responseText.length>0){
+                document.getElementById("labelMsg").innerHTML = this.responseText
+                document.getElementById("inputEmail4").focus()
+            }
+            else{
+                document.getElementById("labelMsg").innerHTML=""
+            }
+        }
+    }
+    xhttp.open("get","/searchEmail?e="+str,true)
+    xhttp.send();
+}
