@@ -1,18 +1,16 @@
 require("dotenv").config()
-let mysql = require("mysql2")
+let mysql = require("mysql2/promise")
 
-let conn = mysql.createConnection({
+let conn = mysql.createPool({
     host:process.env.db_host,
     user:process.env.db_user,
     password:process.env.db_pass,
-    database:process.env.db_database
+    database:process.env.db_database,
+
+    waitForConnections:true,
+    connectionLimit:10,
+    queueLimit:0
+
 })
 
-conn.connect((err)=> {
-    if(err){
-        console.log("Connection Failed");
-    }
-    else{
-        console.log("Database Connected..");
-    }
-})
+module.exports = conn
