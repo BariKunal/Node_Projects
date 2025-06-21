@@ -36,10 +36,48 @@ exports.validateLoginUser = (req,res) =>{
             res.render("viewprofile.ejs",{loginUserName:userData.name})
         }
         else{
-            res.render("login.ejs",{msg:"Login Failed"})
+            res.render("login.ejs",{msg:"Login failed"})
         }
     }).catch((err) => {
-        res.render("login.ejs",{msg:"Login Failed"})
+        res.render("login.ejs",{msg:"Login failed"})
         
     })
 }
+
+exports.UserLoginDetails = (req,res) => {
+    let loginUserId = req.session.loginUserId;
+    let result = regModel.getLoginDetails(loginUserId)
+    result.then((r) =>{
+        if(r[0].length>0){
+            let userData = r[0][0]
+            res.render("showProfile.ejs",{u:userData})
+        }
+    })
+}
+
+exports.UpdLogUser=(req,res) => {
+    console.log(req.query);
+    let {name,email,contact,password} =req.query;
+    let loginUserId = req.session.loginUserId;
+    console.log(loginUserId);
+    res.render("updateInfo.ejs",{SesId:loginUserId,name:name,email:email,contact:contact,password:password});
+}
+
+exports.FinalUpdLoginUser = ((req,res) => {
+    console.log(req.body);
+    let {name,email,contact,password} = req.body
+        let loginUserId = req.session.loginUserId;
+console.log(loginUserId);
+    
+     let result = regModel.Update(name,email,contact,password,loginUserId)
+     result.then((r) => {
+        if (r[0].affectedRows > 0) {
+            res.redirect("/getLoginDetails"); 
+        } else {
+            res.send("Update failed!");
+        }
+    }).catch((err) => {
+        console.log("Update error:", err);
+        res.send("Error update");
+    });
+})
