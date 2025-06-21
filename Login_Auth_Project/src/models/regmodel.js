@@ -10,4 +10,13 @@ async function validateUser(uname,upass) {
     return result
 }
 
-module.exports={saveReg,validateUser}
+async function getLoginDetails(loginUserId){
+    let userData = await conn.query("select * from register where rid =?",[loginUserId])
+    return userData
+}
+
+async function Update(name,email,contact,password,loginUserId){
+    let result = await conn.query("update register set name=?,email=?,contact=?,password=? where rid = ?",[name,email,contact,password,loginUserId])
+    return result
+}
+module.exports={saveReg,validateUser,getLoginDetails,Update}
