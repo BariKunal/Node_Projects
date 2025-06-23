@@ -12,7 +12,7 @@ See `npm help init` for definitive documentation on these fields
 and exactly what they do.
 
 Use `npm install <pkg>` afterwards to install a package and
-save it as a dependency in the package.json file.
+save it as a dependency in the package. Son file.
 
 Press ^C at any time to quit.
 package name: (employeeproject)
