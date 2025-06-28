@@ -14,7 +14,7 @@
             <input type="text" class="form-control mt-5" name="name" id="name" placeholder="Enter The Food Name">
             <input type="text" class="form-control mt-5" name="price" id="price" placeholder="Enter Food Price">
             <input type="text" class="form-control mt-5" name="avl" id="avl" placeholder="Available Or Not">
-            <select name="list" >
+            <select class="form-control mt-5" name="list" >
                 <option value="">Choose Food</option>
              <% foodList.forEach((food, index) => { %>
     <option value="<%= food.category_id %>"><%= food.category %></option>
