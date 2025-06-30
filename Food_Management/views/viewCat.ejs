@@ -17,7 +17,7 @@
             <div class="form-group text-center">
                 <input type="text" name="name" id="" class="w-75 p-2" placeholder="Search Category">
             </div>
-            
+
             <table class="table mt-5 text-center table-striped">
                 <tr>
                     <th>Sr NO</th>
@@ -26,17 +26,17 @@
                     <th>Update</th> -->
                 </tr>
                 <tbody id="tblbody">
-                <% foodList.forEach((food,index)=> { %>
-                    <tr>
-                        <td>
-                            <%= index+1%>
-                        </td>
-                        <td>
-                            <%= food.category%>
-                        </td>
-                    </tr>
-                    <% }) %>
-                    </tbody>
+                    <% foodList.forEach((food,index)=> { %>
+                        <tr>
+                            <td>
+                                <%= index+1%>
+                            </td>
+                            <td>
+                                <%= food.category%>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
             </table>
         </div>
 </body>
