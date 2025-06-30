@@ -9,10 +9,10 @@ let conn = mysql.createConnection({
 })
 
 conn.connect((err) => {
-    if(err){
-        console.log("Database Not Connected..." +err);
+    if (err) {
+        console.log("Database Not Connected..." + err);
     }
-    else{
+    else {
         console.log("Dtabase Connected...");
     }
 })
