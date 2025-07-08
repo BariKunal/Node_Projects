@@ -63,11 +63,6 @@ GitHub: [@BariKunal](https://github.com/BariKunal)
 
 Contributions are welcome! Fork this repo, improve code, or create new modules.
 
----
-
-## 📄 License
-
-This project is open-source under the [MIT License](LICENSE).
 
 ---
 
