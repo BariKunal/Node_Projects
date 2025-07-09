@@ -16,8 +16,6 @@ This repository contains a collection of mini web applications built using **Nod
 ---
 
 
----
-
 ## 📌 Project Descriptions
 
 | Project Folder         | Summary |
